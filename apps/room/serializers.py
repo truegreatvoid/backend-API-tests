@@ -1,10 +1,22 @@
 from rest_framework import serializers
-from .models import Room
+
+from apps.room.models import Room
+from apps.office.serializers import OfficeInfoSerializer
+from apps.additional.serializers import ResourceInfoSerializer
 
 class RoomSerializer(serializers.ModelSerializer):
+    office = OfficeInfoSerializer()
+    resources = ResourceInfoSerializer(many=True)
+    
+    status_display = serializers.CharField(
+        source='get_status_display'
+    )
+
     class Meta:
         model = Room
-        fields = '__all__'
+        fields = [
+            'uuid', 'name', 'description', 'office', 'resources', 'location', 'capacity', 'time_global', 'status_display'
+        ]
 
     def validate_capacity(self, value):
         if value <= 1:

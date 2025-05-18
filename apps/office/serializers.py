@@ -14,3 +14,8 @@ class OfficeSerializer(serializers.ModelSerializer):
                 "Capacity must be greater than 1"
             )
         return value
+
+class OfficeInfoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Office
+        fields = ['uuid', 'name', 'cnpj']

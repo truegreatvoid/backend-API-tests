@@ -1,6 +1,6 @@
 from rest_framework import viewsets, filters
 from .models import Room
-from .serializers import RoomSerializer
+from .serializers import RoomSerializer, OfficeInfoSerializer
 
 class RoomViewSet(viewsets.ModelViewSet):
     queryset = Room.objects.all()
