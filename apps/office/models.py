@@ -22,14 +22,9 @@ def validate_br_document(value):
 
 class Office(Base):
     name = models.CharField('Name', max_length=255, db_index=True, unique=True)
-    cnpj = models.CharField('CPF/CNPJ', max_length=18, unique=True, validators=[validate_br_document])
+    cnpj = models.CharField('CPF/CNPJ', max_length=18, unique=True)
     location = models.CharField('Localização', max_length=255)
-    phone = models.CharField('Telephone', max_length=20, blank=True, null=True,
-        validators=[RegexValidator(
-                regex=r'^\+?[\d\-\(\) ]{8,20}$',
-                message='Invalid phone number.'
-            )
-        ]
+    phone = models.CharField('Telephone', max_length=20, blank=True, null=True
     )
     rooms = models.PositiveIntegerField('Number of Rooms', default=1, validators=[MinValueValidator(1)])
 
