@@ -1,6 +1,7 @@
 asgiref==3.8.1
 attrs==25.3.0
 Django==5.1.8
+django-cors-headers==4.7.0
 django-localflavor==4.0
 django-rest-framework==0.1.0
 djangorestframework==3.16.0
@@ -15,4 +16,5 @@ referencing==0.36.2
 rest-framework-simplejwt==0.0.2
 rpds-py==0.25.0
 sqlparse==0.5.3
+typing_extensions==4.13.2
 uritemplate==4.1.1
