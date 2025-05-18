@@ -21,12 +21,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'drf_spectacular',
     'rest_framework',
+
     'apps.core',
     'apps.api',
     'apps.customers',
     'apps.room',
     'apps.additional',
+    'apps.office',
 ]
 
 MIDDLEWARE = [
@@ -68,8 +72,16 @@ DATABASES = {
 }
 
 REST_FRAMEWORK = {
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
     'PAGE_SIZE': 20
+}
+
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'backend-API-tests',
+    'DESCRIPTION': 'Documentação para projeto da faculdade de Testes',
+    'VERSION': 'v1',
 }
 
 # DATABASES = {

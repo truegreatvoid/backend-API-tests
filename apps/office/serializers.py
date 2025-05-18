@@ -1,9 +1,11 @@
 from rest_framework import serializers
-from .models import Room
 
-class RoomSerializer(serializers.ModelSerializer):
+from apps.office.models import Office
+
+
+class OfficeSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Room
+        model = Office
         fields = '__all__'
 
     def validate_capacity(self, value):

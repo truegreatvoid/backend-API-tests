@@ -7,5 +7,5 @@ class RoomViewSet(viewsets.ModelViewSet):
     serializer_class = RoomSerializer
 
     filter_backends = [filters.SearchFilter, filters.OrderingFilter]
-    search_fields = ['name', 'description']
-    ordering_fields = ['capacity']
+    search_fields = ['uuid', 'name', 'description', 'stats']
+    ordering_fields = ['name']
