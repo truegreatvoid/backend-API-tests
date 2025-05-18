@@ -11,11 +11,12 @@ class RoomSerializer(serializers.ModelSerializer):
     status_display = serializers.CharField(
         source='get_status_display'
     )
+    
 
     class Meta:
         model = Room
         fields = [
-            'uuid', 'name', 'description', 'office', 'resources', 'location', 'capacity', 'time_global', 'status_display'
+            'id' ,'uuid', 'name', 'description', 'office', 'resources', 'location', 'capacity', 'time_global', 'status_display'
         ]
 
     def validate_capacity(self, value):

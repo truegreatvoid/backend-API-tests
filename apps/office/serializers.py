@@ -18,4 +18,4 @@ class OfficeSerializer(serializers.ModelSerializer):
 class OfficeInfoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Office
-        fields = ['uuid', 'name', 'cnpj']
+        fields = ['id', 'uuid', 'name', 'cnpj']

@@ -37,6 +37,8 @@ class Office(Base):
             verbose_name = 'Office'
             verbose_name_plural = 'Offices'
 
+            
+
     def __str__(self):
         return f'{self.name} – {self.cnpj}'
 
