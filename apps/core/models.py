@@ -11,7 +11,7 @@ class APIUUID(models.Model):
 
 class Base(APIUUID):
     name = models.CharField('Name', max_length=255, db_index=True)
-    description = models.TextField('Description', blank=True, null=True)
+    description = models.TextField('Description', blank=True, null=True, max_length=500)
     stats = models.BooleanField(default=True, db_index=True)
 
     class Meta:
