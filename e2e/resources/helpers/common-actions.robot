@@ -33,16 +33,8 @@ Verify Element Value
     [Documentation]     Validate Element have specific attribute value
     Verify Element      ${element}\[@value="${value}"]
 
-Verify Placeholder Text
-    [Arguments]     ${element}      ${text}
-    [Documentation]     Validate Text shown on placeholder
-    ${value}=        Get Attribute    ${element}    placeholder
-    Should Be Equal As Strings      ${text}     ${value}
-
 Click Element
     [Arguments]     ${element}
-    [Documentation]     Do Click action only when element is ready to click.
-    ...     Reference : https://playwright.dev/docs/actionability
     Click   ${element}
 
 Click Element with Text
@@ -63,31 +55,6 @@ Input Text with Delay
     ...     only when element is ready at DOM.
     Verify Element  ${element}
     Type Text   ${element}      ${value}    ${delay}
-
-Input Password to Element
-    [Documentation]     Clear and Input a text to Input Field without log the credential value
-    ...     only when element is ready at DOM.
-    [Arguments]     ${element}      ${value}
-    Verify Element  ${element}
-    Type Secret   ${element}      $value
-
-Verify Checkbox State by Value
-    [Documentation]     Verify state of checkbox where element have specific attribute value
-    [Arguments]     ${element}      ${value}    ${state}
-    Get Checkbox State      ${element}\[@value="${value}"]      ==      ${state}
-
-Get Text Element by Index
-    [Documentation]     Return the text of an element from specific index
-    [Arguments]     ${element}  ${index}
-    ${text}=        Get Text       ${element}\[${index}]
-
-    RETURN    ${text}
-
-Verify Search Query Paramater Value
-    [Documentation]     Validate value of an url paramater
-    [Arguments]     ${param}    ${text}
-    ${value}=       Get Value of URL Paramater      ${param}
-    Should Be Equal As Strings      ${text}     ${value}
 
 Verify Current URL
     [Documentation]

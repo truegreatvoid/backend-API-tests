@@ -1,11 +1,11 @@
 *** Variables ***
 ${BROWSER}              chromium
-${HEADLESS}             True  # False caso queira ver o navegador
+${HEADLESS}             False  # False caso queira ver o navegador
 ${KEYWORD_TIMEOUT}      5s
 ${BROWSER_TIMEOUT}      5s
-${SauceDemo_URL}        https://www.saucedemo.com/
-${SCREENSHOT_DIR}    ${EXECDIR}/results/screenshots
-${LOGS_DIR}          ${EXECDIR}/results/logs
+${BASE_URL}             http://localhost:3000
+${SCREENSHOT_DIR}    ${EXECDIR}/e2e/results/screenshots
+${LOGS_DIR}          ${EXECDIR}/e2e/results/logs
 ${TIMESTAMP}         ${EMPTY}
 
 *** Settings ***
@@ -30,8 +30,8 @@ Open New Browser
     New Page  ${url}
     Set Browser Timeout     ${KEYWORD_TIMEOUT}
 
-Open SauceDemo
-    Open New Browser    ${SauceDemo_URL}
+Open WorkSpacePro
+    Open New Browser    ${BASE_URL}
 
 Finish Test Suite
     ${current_date}=    Get Current Date    result_format=%Y%m%d_%H%M%S
