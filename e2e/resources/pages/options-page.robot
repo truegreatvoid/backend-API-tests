@@ -13,7 +13,7 @@ Verify Number Of Options
 
 Go To Options Page
     Click Button Options
-    Sleep  1s
+    Sleep  0.5s
     Verify Current URL  http://localhost:3000/options
 
 Click Option Office

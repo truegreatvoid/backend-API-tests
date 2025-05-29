@@ -1,6 +1,6 @@
 *** Variables ***
 ${BROWSER}              chromium
-${HEADLESS}             False  # False caso queira ver o navegador
+${HEADLESS}             True  # False caso queira ver o navegador
 ${KEYWORD_TIMEOUT}      5s
 ${BROWSER_TIMEOUT}      5s
 ${BASE_URL}             http://localhost:3000
